@@ -62,20 +62,30 @@ let userChoice = async () => {
       {
         key: "b",
         name: "let your pet hunt !",
-        value: "feed",
+        value: "hunt",
       },
       {
         key: "c",
-        name: "give your pet a drink",
-        value: "drink",
+        name: "let your pet go to the gym ",
+        value: "gym",
       },
       {
         key: "d",
+        name: "let pet have a drink",
+        value: "drink",
+      },
+      {
+        key: "e",
+        name: "flirt with date",
+        value: "flirt",
+      },
+      {
+        key: "f",
         name: "view your pet stats",
         value: "stats",
       },
       {
-        key: "e",
+        key: "g",
         name: "quit the game",
         value: "quit",
       },
@@ -83,10 +93,12 @@ let userChoice = async () => {
   });
 
 
-  if (choice === "hunt") await myPet.eats();
+  if (choice === "hunt") await myPet.hunt();
   if (choice === "play") await myPet.play();
   if (choice === "stats") await myPet.stats();
   if (choice === "drink") await myPet.drinks();
+  if (choice === "flirt")await myPet.flirt();
+  if (choice === "gym")await myPet.gym();
   if (choice === "quit") {
     const quitChoice = await confirmQuit();
     if (quitChoice) return;
